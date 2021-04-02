@@ -219,10 +219,8 @@
 #X connect 2 0 15 0;
 #X connect 3 0 15 1;
 #X connect 4 0 0 0;
-#X connect 4 0 0 1;
 #X connect 5 0 0 0;
 #X connect 5 0 0 1;
-#X connect 6 0 0 0;
 #X connect 6 0 0 1;
 #X connect 7 0 10 0;
 #X connect 7 0 10 1;
@@ -373,7 +371,7 @@
 -1 -1 0 1;
 #X text 505 664 Volumen 0 - 5;
 #X obj 334 838 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X text 342 811 Posición;
 #X obj 508 725 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -390,7 +388,7 @@
 #N canvas -8 -8 1366 725 guit_2 0;
 #X obj 322 361 *~ 1;
 #X obj 611 194 vsl 15 128 0 7 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1814 1;
+-1 -1 54 1;
 #X obj 322 425 *~;
 #X obj 392 429 vline~;
 #X msg 392 385 0.1 500;
@@ -398,7 +396,7 @@
 #X floatatom 432 741 5 0 100 0 - - -;
 #X obj 321 27 loadbang;
 #X obj 386 476 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 692 1;
+-1 -1 694 1;
 #X obj 382 531 mtof~;
 #X obj 383 574 +~;
 #X obj 440 548 *~;
@@ -428,7 +426,7 @@
 #X obj 214 557 /;
 #X floatatom 214 581 5 0 0 0 - - -;
 #X obj 217 683 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X obj 500 81 inlet;
 #X obj 552 79 inlet;
 #X obj 612 79 inlet;
@@ -582,7 +580,7 @@ time., f 30;
 -1 -1;
 #X obj 485 339 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 551 785 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 551 785 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 506 844 5 0 0 0 - - -;
 #X obj 506 817 expr if($f1 == 1 \, $f2 \, 0);
@@ -593,11 +591,12 @@ time., f 30;
 #X obj 1076 754 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X floatatom 1028 817 5 0 0 0 - - -;
-#X msg 754 464 1;
 #X msg 858 465 2;
 #X obj 1032 785 expr if($f1 == 1 \, $f2 \, 0);
 #X msg 790 465 8;
 #X msg 825 465 100;
+#X obj 912 292 r volGuit;
+#X msg 754 464 0.03;
 #X connect 0 0 2 0;
 #X connect 1 0 79 0;
 #X connect 2 0 14 0;
@@ -616,7 +615,7 @@ time., f 30;
 #X connect 10 0 14 1;
 #X connect 11 0 10 1;
 #X connect 12 0 70 0;
-#X connect 13 0 95 1;
+#X connect 13 0 94 1;
 #X connect 14 0 44 0;
 #X connect 14 0 45 0;
 #X connect 15 0 11 0;
@@ -654,13 +653,13 @@ time., f 30;
 #X connect 46 0 19 0;
 #X connect 46 0 25 1;
 #X connect 48 0 32 1;
-#X connect 49 0 93 0;
-#X connect 49 0 97 0;
+#X connect 49 0 98 0;
 #X connect 49 0 96 0;
-#X connect 49 0 94 0;
+#X connect 49 0 95 0;
+#X connect 49 0 93 0;
 #X connect 49 0 75 0;
 #X connect 49 0 19 0;
-#X connect 49 0 95 0;
+#X connect 49 0 94 0;
 #X connect 51 0 12 0;
 #X connect 52 0 55 0;
 #X connect 52 0 51 0;
@@ -668,7 +667,7 @@ time., f 30;
 #X connect 52 0 57 0;
 #X connect 52 0 58 0;
 #X connect 52 0 54 0;
-#X connect 52 0 95 0;
+#X connect 52 0 94 0;
 #X connect 54 0 23 0;
 #X connect 55 0 1 0;
 #X connect 56 0 73 0;
@@ -711,13 +710,14 @@ time., f 30;
 #X connect 88 0 84 0;
 #X connect 89 0 91 0;
 #X connect 90 0 91 0;
-#X connect 91 0 95 0;
+#X connect 91 0 94 0;
 #X connect 92 0 14 2;
-#X connect 93 0 1 0;
-#X connect 94 0 13 0;
-#X connect 95 0 92 0;
-#X connect 96 0 73 0;
-#X connect 97 0 12 0;
+#X connect 93 0 13 0;
+#X connect 94 0 92 0;
+#X connect 95 0 73 0;
+#X connect 96 0 12 0;
+#X connect 97 0 98 0;
+#X connect 98 0 1 0;
 #X restore 416 696 pd guit_2;
 #X obj 447 622 r reGui_2;
 #X obj 744 623 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -729,7 +729,7 @@ time., f 30;
 -1 -1 0 1;
 #X text 833 662 Volumen 0 - 5;
 #X obj 662 836 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X text 670 809 Posición;
 #X obj 836 723 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -746,7 +746,7 @@ time., f 30;
 #N canvas -8 -8 1366 685 guit_3 0;
 #X obj 322 361 *~ 1;
 #X obj 610 194 vsl 15 128 0 7 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1814 1;
+-1 -1 544 1;
 #X obj 322 425 *~;
 #X obj 392 429 vline~;
 #X msg 392 385 0.1 500;
@@ -754,7 +754,7 @@ time., f 30;
 #X floatatom 432 741 5 0 100 0 - - -;
 #X obj 321 27 loadbang;
 #X obj 386 476 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 692 1;
+-1 -1 694 1;
 #X obj 382 531 mtof~;
 #X obj 383 574 +~;
 #X obj 431 530 *~;
@@ -784,7 +784,7 @@ time., f 30;
 #X obj 214 557 /;
 #X floatatom 214 581 5 0 0 0 - - -;
 #X obj 217 683 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X obj 500 81 inlet;
 #X obj 552 79 inlet;
 #X obj 612 79 inlet;
@@ -938,7 +938,7 @@ time., f 30;
 -1 -1;
 #X obj 527 353 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 901 793 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 901 793 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 856 852 5 0 0 0 - - -;
 #X obj 856 825 expr if($f1 == 1 \, $f2 \, 0);
@@ -949,11 +949,12 @@ time., f 30;
 #X obj 1157 806 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X floatatom 1112 871 5 0 0 0 - - -;
-#X msg 752 415 1;
 #X obj 1112 838 expr if($f1 == 1 \, $f2 \, 0);
 #X msg 788 416 8;
 #X msg 856 416 2;
 #X msg 823 418 100;
+#X obj 875 346 r volGuit;
+#X msg 752 415 0.3;
 #X connect 0 0 2 0;
 #X connect 1 0 79 0;
 #X connect 2 0 14 0;
@@ -972,7 +973,7 @@ time., f 30;
 #X connect 10 0 14 1;
 #X connect 11 0 10 1;
 #X connect 12 0 69 0;
-#X connect 13 0 94 1;
+#X connect 13 0 93 1;
 #X connect 14 0 47 0;
 #X connect 14 0 48 0;
 #X connect 15 0 11 0;
@@ -1010,20 +1011,20 @@ time., f 30;
 #X connect 45 0 26 0;
 #X connect 46 0 32 1;
 #X connect 48 1 47 0;
-#X connect 49 0 93 0;
-#X connect 49 0 97 0;
-#X connect 49 0 95 0;
+#X connect 49 0 98 0;
 #X connect 49 0 96 0;
+#X connect 49 0 94 0;
+#X connect 49 0 95 0;
 #X connect 49 0 75 0;
 #X connect 49 0 19 0;
-#X connect 49 0 94 0;
+#X connect 49 0 93 0;
 #X connect 50 0 54 0;
 #X connect 50 0 56 0;
 #X connect 50 0 55 0;
 #X connect 50 0 57 0;
 #X connect 50 0 58 0;
 #X connect 50 0 52 0;
-#X connect 50 0 94 0;
+#X connect 50 0 93 0;
 #X connect 52 0 23 0;
 #X connect 53 0 50 0;
 #X connect 54 0 1 0;
@@ -1068,20 +1069,21 @@ time., f 30;
 #X connect 88 0 84 0;
 #X connect 89 0 91 0;
 #X connect 90 0 91 0;
-#X connect 91 0 94 0;
+#X connect 91 0 93 0;
 #X connect 92 0 14 2;
-#X connect 93 0 1 0;
-#X connect 94 0 92 0;
-#X connect 95 0 73 0;
-#X connect 96 0 13 0;
-#X connect 97 0 12 0;
+#X connect 93 0 92 0;
+#X connect 94 0 73 0;
+#X connect 95 0 13 0;
+#X connect 96 0 12 0;
+#X connect 97 0 98 0;
+#X connect 98 0 1 0;
 #X restore 744 694 pd guit_3;
 #X obj 775 620 r reGui_3;
 #X text 741 578 vel original;
 #N canvas -8 -8 1366 685 guit_1 0;
 #X obj 325 333 *~ 1;
 #X obj 611 194 vsl 15 128 0 10 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1270 1;
+-1 -1 254 1;
 #X floatatom 712 275 10 0 1 0 - - -;
 #X obj 325 397 *~;
 #X obj 395 401 vline~;
@@ -1191,7 +1193,7 @@ time., f 30;
 #X floatatom 432 741 5 0 100 0 - - -;
 #X obj 321 27 loadbang;
 #X obj 386 476 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 989 1;
+-1 -1 992 1;
 #X obj 382 531 mtof~;
 #X obj 383 574 +~;
 #X obj 441 544 *~;
@@ -1223,7 +1225,7 @@ time., f 30;
 #X floatatom 214 581 5 0 0 0 - - -;
 #X obj 253 535 r guit_1;
 #X obj 217 683 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X obj 500 81 inlet;
 #X obj 552 79 inlet;
 #X obj 19 154 s reGui_1;
@@ -1272,7 +1274,7 @@ time., f 30;
 -1 -1;
 #X obj 495 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 579 776 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 579 776 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 534 835 5 0 0 0 - - -;
 #X obj 534 808 expr if($f1 == 1 \, $f2 \, 0);
@@ -1281,13 +1283,14 @@ time., f 30;
 #X obj 1127 769 r distOff;
 #X obj 1202 770 r distOn;
 #X obj 1157 806 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X floatatom 1109 869 5 0 0 0 - - -;
-#X msg 752 415 1;
 #X msg 856 417 2;
 #X obj 1112 838 expr if($f1 == 1 \, $f2 \, 0);
 #X msg 788 416 8;
 #X msg 823 416 100;
+#X obj 912 292 r volGuit;
+#X msg 753 415 0.2;
 #X connect 0 0 3 0;
 #X connect 1 0 78 0;
 #X connect 2 0 0 1;
@@ -1309,7 +1312,7 @@ time., f 30;
 #X connect 14 0 18 1;
 #X connect 15 0 14 1;
 #X connect 16 0 72 0;
-#X connect 17 0 94 1;
+#X connect 17 0 93 1;
 #X connect 18 0 9 0;
 #X connect 18 0 8 0;
 #X connect 19 0 15 0;
@@ -1345,13 +1348,13 @@ time., f 30;
 #X connect 47 0 17 0;
 #X connect 48 0 16 0;
 #X connect 49 0 10 0;
-#X connect 50 0 92 0;
-#X connect 50 0 96 0;
+#X connect 50 0 97 0;
 #X connect 50 0 95 0;
-#X connect 50 0 93 0;
+#X connect 50 0 94 0;
+#X connect 50 0 92 0;
 #X connect 50 0 75 0;
 #X connect 50 0 23 0;
-#X connect 50 0 94 0;
+#X connect 50 0 93 0;
 #X connect 51 0 16 0;
 #X connect 52 0 58 0;
 #X connect 52 0 51 0;
@@ -1359,7 +1362,7 @@ time., f 30;
 #X connect 52 0 54 0;
 #X connect 52 0 55 0;
 #X connect 52 0 59 0;
-#X connect 52 0 94 0;
+#X connect 52 0 93 0;
 #X connect 53 0 71 0;
 #X connect 54 0 17 0;
 #X connect 55 0 10 0;
@@ -1400,13 +1403,14 @@ time., f 30;
 #X connect 87 0 83 0;
 #X connect 88 0 90 0;
 #X connect 89 0 90 0;
-#X connect 90 0 94 0;
+#X connect 90 0 93 0;
 #X connect 91 0 18 2;
-#X connect 92 0 1 0;
-#X connect 93 0 17 0;
-#X connect 94 0 91 0;
-#X connect 95 0 71 0;
-#X connect 96 0 16 0;
+#X connect 92 0 17 0;
+#X connect 93 0 91 0;
+#X connect 94 0 71 0;
+#X connect 95 0 16 0;
+#X connect 96 0 97 0;
+#X connect 97 0 1 0;
 #X restore 78 693 pd guit_1;
 #X obj 78 622 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -1418,7 +1422,7 @@ time., f 30;
 #X obj 169 687 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 9 833 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X text 4 808 Posición;
 #X obj 170 722 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -1441,7 +1445,7 @@ time., f 30;
 -1 -1 0 1;
 #X text 1704 639 Volumen 0 - 5;
 #X obj 1510 813 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X text 1518 786 Posición;
 #X obj 1707 700 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -1456,7 +1460,7 @@ time., f 30;
 #N canvas -8 -8 1366 725 antiGui_1 0;
 #X obj 322 361 *~ 1;
 #X obj 611 194 vsl 15 128 0 5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 7620 1;
 #X obj 322 425 *~;
 #X obj 392 429 vline~;
 #X msg 392 385 0.1 500;
@@ -1492,7 +1496,7 @@ time., f 30;
 #X obj 214 557 /;
 #X floatatom 214 581 5 0 0 0 - - -;
 #X obj 217 683 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X obj 500 81 inlet;
 #X obj 552 79 inlet;
 #X obj 612 79 inlet;
@@ -1533,13 +1537,13 @@ time., f 30;
 -1 -1;
 #X obj 392 358 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 519 791 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 519 791 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 471 854 5 0 0 0 - - -;
 #X obj 474 823 expr if($f1 == 1 \, $f2 \, 1);
 #X obj 429 756 r distEspOff;
 #X obj 529 755 r distEspOn;
-#X msg 693 587 6;
+#X msg 693 587 3;
 #X connect 0 0 2 0;
 #X connect 1 0 64 0;
 #X connect 2 0 44 0;
@@ -1640,7 +1644,7 @@ time., f 30;
 -1 -1 0 1;
 #X text 2058 648 Volumen 0 - 5;
 #X obj 1864 822 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11399 1;
+-1 -1 9306 1;
 #X text 1872 795 Posición;
 #X obj 2061 709 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -1656,7 +1660,7 @@ time., f 30;
 #N canvas -8 -8 1366 725 antiGui_2 0;
 #X obj 322 361 *~ 1;
 #X obj 611 194 vsl 15 128 0 20 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5080 1;
+-1 -1 1905 1;
 #X obj 322 425 *~;
 #X obj 392 429 vline~;
 #X msg 392 385 0.1 500;
@@ -1692,7 +1696,7 @@ time., f 30;
 #X obj 214 557 /;
 #X floatatom 214 581 5 0 0 0 - - -;
 #X obj 217 683 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11399 1;
+-1 -1 9306 1;
 #X obj 500 81 inlet;
 #X obj 552 79 inlet;
 #X obj 612 79 inlet;
@@ -1738,8 +1742,8 @@ time., f 30;
 #X obj 474 823 expr if($f1 == 1 \, $f2 \, 1);
 #X obj 429 756 r distEspOff;
 #X obj 529 755 r distEspOn;
-#X msg 693 587 8;
 #X msg 808 588 4;
+#X msg 693 587 3;
 #X connect 0 0 2 0;
 #X connect 1 0 63 0;
 #X connect 2 0 40 0;
@@ -1793,10 +1797,10 @@ time., f 30;
 #X connect 41 0 23 1;
 #X connect 43 0 30 1;
 #X connect 44 0 24 0;
-#X connect 46 0 73 0;
+#X connect 46 0 74 0;
 #X connect 46 0 49 0;
 #X connect 46 0 48 0;
-#X connect 46 0 74 0;
+#X connect 46 0 73 0;
 #X connect 46 0 17 0;
 #X connect 46 0 70 0;
 #X connect 48 0 7 0;
@@ -1827,8 +1831,8 @@ time., f 30;
 #X connect 70 0 69 0;
 #X connect 71 0 68 0;
 #X connect 72 0 68 0;
-#X connect 73 0 1 0;
-#X connect 74 0 12 0;
+#X connect 73 0 12 0;
+#X connect 74 0 1 0;
 #X restore 1946 680 pd antiGui_2;
 #X obj 1169 606 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -1839,7 +1843,7 @@ time., f 30;
 -1 -1 0 1;
 #X text 1281 645 Volumen 0 - 5;
 #X obj 1122 808 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X text 1130 781 Posición;
 #X obj 1284 706 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -1862,7 +1866,7 @@ time., f 30;
 #X msg 467 385 0 500;
 #X obj 321 27 loadbang;
 #X obj 386 476 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2207 1;
+-1 -1 2214 1;
 #X obj 382 531 mtof~;
 #X obj 383 574 +~;
 #X obj 432 544 *~;
@@ -1891,7 +1895,7 @@ time., f 30;
 #X obj 214 557 /;
 #X floatatom 214 581 5 0 0 0 - - -;
 #X obj 217 683 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11464 1;
+-1 -1 9306 1;
 #X obj 500 81 inlet;
 #X obj 552 79 inlet;
 #X obj 612 79 inlet;
@@ -2054,12 +2058,12 @@ time., f 30;
 #X obj 536 846 * 0.8;
 #X obj 917 769 r revMarOff;
 #X obj 1006 771 r revMarOn;
-#X obj 901 793 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 901 793 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 856 852 5 0 0 0 - - -;
 #X obj 856 825 expr if($f1 == 1 \, $f2 \, 0);
 #X obj 1157 806 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X floatatom 1109 869 5 0 0 0 - - -;
 #X obj 1112 838 expr if($f1 == 1 \, $f2 \, 1);
 #X obj 1127 769 r distMarOff;
@@ -2243,7 +2247,7 @@ time., f 30;
 #X msg 382 592 0 500;
 #X obj 360 740 mtof;
 #X obj 365 683 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 2700 1;
 #X floatatom 361 711 5 0 0 0 - - -;
 #X obj 258 728 hip~ 5;
 #X obj 239 543 tabplay~;
@@ -2407,7 +2411,7 @@ time., f 30;
 #N canvas -8 -8 1366 725 freePercus 0;
 #X obj 125 738 *~ 1;
 #X obj 367 621 vsl 15 128 0 5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2032 1;
+-1 -1 1016 1;
 #X obj 127 775 *~;
 #X obj 197 779 vline~;
 #X msg 197 735 0.1 500;
@@ -2433,7 +2437,7 @@ time., f 30;
 -1;
 #X obj 247 899 mtof;
 #X obj 252 842 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2683 1;
+-1 -1 6331 1;
 #X floatatom 248 870 5 0 0 0 - - -;
 #X floatatom 297 809 5 0 0 0 - - -;
 #X msg 20 222 set padT2-1;
@@ -2490,7 +2494,7 @@ time., f 30;
 -1 -1;
 #X obj 281 691 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 578 571 0.8;
+#X msg 578 571 0.4;
 #X connect 0 0 2 0;
 #X connect 1 0 62 0;
 #X connect 2 0 6 0;
@@ -2611,7 +2615,7 @@ time., f 30;
 #X msg 311 489 0 500;
 #X obj 298 646 mtof;
 #X obj 272 597 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9944 1;
+-1 -1 4790 1;
 #X floatatom 298 620 5 0 0 0 - - -;
 #X obj 89 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -2894,7 +2898,7 @@ time., f 30;
 #X obj 1210 396 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;
 #X obj 1055 607 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1210 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1210 423 select 0 1;
@@ -3190,6 +3194,8 @@ time., f 30;
 #X restore 1485 -48 pd osc receive;
 #X floatatom 1559 119 5 0 0 0 - - -;
 #X obj 1611 120 s bsHumAir;
+#X obj 619 541 s volGuit;
+#X msg 619 506 0.1;
 #X connect 0 0 1 0;
 #X connect 0 0 8 1;
 #X connect 0 0 8 2;
@@ -3342,3 +3348,4 @@ time., f 30;
 #X connect 247 14 231 0;
 #X connect 247 15 248 0;
 #X connect 248 0 249 0;
+#X connect 251 0 250 0;
